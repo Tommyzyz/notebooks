@@ -1,1 +1,2 @@
 Get-Alias
+Get-CimInstance 
