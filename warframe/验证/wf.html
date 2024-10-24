@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>WF-API Tests</title>
+</head>
+
+<body>
+    <p>Choose one of the following Datasets to see a sample of what the API can do!</p>
+    <select name="case" id="caseSelect">
+        <option disabled="" selected="" value="" style="display: none">Select One</option>
+        <option value="alerts">Alerts</option>
+        <option value="sorties">Sorties</option>
+        <option value="cycleCetus">Cetus</option>
+        <option value="cycleEarth">Earth</option>
+        <option value="voidTrader">Void Trader</option>
+        <option value="news">News</option>
+        <option value="syndicateMissions">Syndicate Missions</option>
+        <option value="fissures">Fissure Missions</option>
+        <option value="invasions">Invasions</option>
+        <option value="dailyDeals">Daily Deals</option>
+        <option value="simaris">Simaris</option>
+        <option value="conclaveChallenges">Conclave Challenges</option>
+    </select>
+    <pre id="test"></pre>
+    <script src="https://cdn.jsdelivr.net/gh/wfcd/Warframe.js@master/app.min.js"></script>
+    <script>
+        document.querySelector("#caseSelect").addEventListener("change", changeCase);
+
+        let options = { platform: "pc" };
+
+        const WF = new Warframe(options);
+
+        // (async function () {
+        //     document.querySelector("#test").innerText = await WF.heartbeat === "Success" ? "API is reachable" : "API is not reachable";
+        // })();
+
+        // function changeCase(e) {
+        //     let value = e.target.value;
+        //     !!value && WF[value].then(d => {
+        //         console.log(d);
+        //         document.querySelector("#test").innerText = JSON.stringify(d, null, 2)//将一个 JavaScript 对象或值转换为 JSON 字符串
+        //     });
+        // }
+
+
+        function changeCase(e) {
+            let value = e.target.value;
+            if(value!=null)
+            {
+                console.log(WF[value]);
+                WF[value].then(d => {
+                console.log(d);
+                document.querySelector("#test").innerText = JSON.stringify(d, null, 2)//将一个 JavaScript 对象或值转换为 JSON 字符串
+                });
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
