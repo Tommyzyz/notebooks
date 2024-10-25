@@ -4,16 +4,33 @@
 static async Task TestAsync<T>(string queryName)
 {
 
+
     HttpClient httpClient = new();
     string requeststring = $"https://api.warframestat.us/pc/zh/{queryName}/";
+    try
+    {
+        //Send the GET request
+        var response = await httpClient.GetAsync(requeststring);
+        response.EnsureSuccessStatusCode();
 
-    var response = await httpClient.GetAsync(requeststring);
-    //response.EnsureSuccessStatusCode();
-    var json = await response.Content.ReadAsStringAsync();
-    var result = System.Text.Json.JsonSerializer.Deserialize<T>(json);
+        var json = await response.Content.ReadAsStringAsync();
+        var result = System.Text.Json.JsonSerializer.Deserialize<T>(json);
 
-    System.Console.WriteLine(result?.ToString());
+        System.Console.WriteLine(result?.ToString());
+    }
+    catch (Exception ex)
+    {
+        System.Console.WriteLine("Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message);
+    }
+
+
+
+
+
+
 }
+
+
 
 //await TestAsync<ArchonHunt>("archonHunt");
 //await TestAsync<List<Alerts>>("alerts");
