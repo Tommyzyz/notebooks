@@ -4,6 +4,7 @@ namespace ConsoleWarframeApp.Model;
 //警报
 public class Alerts
 {
+    public const string clientString = "alerts";
         public required string id { get; set; }
         public DateTime activation { get; set; }
         public required string startString { get; set; }

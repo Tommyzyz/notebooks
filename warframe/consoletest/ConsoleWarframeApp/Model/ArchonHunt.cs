@@ -4,6 +4,8 @@ namespace ConsoleWarframeApp.Model;
 
 public class ArchonHunt
 {
+    public const string clientString = "archonHunt";
+    
         public required string id { get; set; }
         public DateTime activation { get; set; }
         public required string startString { get; set; }

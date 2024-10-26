@@ -5,6 +5,8 @@ namespace ConsoleWarframeApp.Model;
 
 public class News
 {
+    public const string clientString = "news";
+    
     public required string id { get; set; }
     public required string message { get; set; }
     public required string link { get; set; }

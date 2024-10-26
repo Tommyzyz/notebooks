@@ -4,6 +4,8 @@ namespace ConsoleWarframeApp.Model;
 
 public class CetusCycle
 {
+    public const string clientString = "cetusCycle";
+    
     public required string id { get; set; }
     public DateTime expiry { get; set; }
     public DateTime activation { get; set; }
