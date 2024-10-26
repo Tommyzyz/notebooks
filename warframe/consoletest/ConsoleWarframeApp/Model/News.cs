@@ -3,7 +3,7 @@ using System;
 namespace ConsoleWarframeApp.Model;
 
 
-public class News
+public class news
 {
     public const string clientString = "news";
     

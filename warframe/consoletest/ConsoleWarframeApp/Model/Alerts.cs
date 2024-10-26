@@ -2,7 +2,7 @@ using System;
 
 namespace ConsoleWarframeApp.Model;
 //警报
-public class Alerts
+public class alerts
 {
     public const string clientString = "alerts";
         public required string id { get; set; }

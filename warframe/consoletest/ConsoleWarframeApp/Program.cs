@@ -2,45 +2,48 @@
 
 
 
-await TestAsync<ArchonHunt>(ArchonHunt.clientString);
- await TestAsync<List<Alerts>>(Alerts.clientString);
- await TestAsync<List<News>>(News.clientString);
- await TestAsync<CetusCycle>(CetusCycle.clientString);
+ await TestAsync<archonHunt>();
+  await TestAsync<List<alerts>>();
+  await TestAsync<List<news>>();
+  await TestAsync<cetusCycle>();
 
- await TestAsync<List<DailyDeals>>(DailyDeals.clientString);
- await TestAsync<Nightwave>(Nightwave.clientString);
+  await TestAsync<List<dailyDeals>>();
+ var rs =  await TestAsync<nightwave>();
 
 
-
- Console.ReadKey();
-Console.WriteLine("Hello, World!");
+Console.WriteLine(rs);
 return;
 
+
  
- 
- 
- 
- 
-static async Task TestAsync<T>(string clientString)
+static async Task<T> TestAsync<T>()
 {
     try
     {
         HttpClient httpClient = new();
-        string requeststring = $"https://api.warframestat.us/pc/zh/{clientString}/";
+        var requeststring = $"https://api.warframestat.us/pc/zh/{GetGengricType<T>()}/";
 
         var response = await httpClient.GetAsync(requeststring);
         //response.EnsureSuccessStatusCode();
         var json = await response.Content.ReadAsStringAsync();
         var result = JsonSerializer.Deserialize<T>(json);
-
         Console.WriteLine(result?.ToString());
-
+        return result;
     }
     catch (Exception e)
-    
     {
         Console.WriteLine(e.Message);
         throw;
     }
+}
 
+
+static string GetGengricType<T>()
+{
+    Type type = typeof(T);
+    if (type.IsGenericType)
+    {
+        type = type.GetGenericArguments()[0];
+    }
+    return type.Name;
 }

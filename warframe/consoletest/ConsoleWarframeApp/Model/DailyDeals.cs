@@ -2,7 +2,7 @@ using System;
 
 namespace ConsoleWarframeApp.Model;
 
-public class DailyDeals
+public class dailyDeals
 {
     public const string clientString = "dailyDeals";
     public required string item { get; set; }

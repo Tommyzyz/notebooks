@@ -2,7 +2,7 @@ using System;
 
 namespace ConsoleWarframeApp.Model;
 
-public class Nightwave
+public class nightwave
 {
     public const string clientString = "nightwave";
 

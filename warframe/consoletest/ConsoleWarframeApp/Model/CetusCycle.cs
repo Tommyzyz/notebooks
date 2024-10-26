@@ -2,7 +2,7 @@ using System;
 
 namespace ConsoleWarframeApp.Model;
 
-public class CetusCycle
+public class cetusCycle
 {
     public const string clientString = "cetusCycle";
     
