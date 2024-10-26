@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConsoleWarframeApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca22fa9f1084feb3fca880671d5af0254ea098c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+664aea41a826cd0210fcdb895f0104fccaaace85")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConsoleWarframeApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConsoleWarframeApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

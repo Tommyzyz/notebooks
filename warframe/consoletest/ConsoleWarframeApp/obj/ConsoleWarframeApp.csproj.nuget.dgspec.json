@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "f:\\nb\\notebooks\\warframe\\consoletest\\ConsoleWarframeApp\\ConsoleWarframeApp.csproj": {}
+    "E:\\git\\notebooks\\warframe\\consoletest\\ConsoleWarframeApp\\ConsoleWarframeApp.csproj": {}
   },
   "projects": {
-    "f:\\nb\\notebooks\\warframe\\consoletest\\ConsoleWarframeApp\\ConsoleWarframeApp.csproj": {
+    "E:\\git\\notebooks\\warframe\\consoletest\\ConsoleWarframeApp\\ConsoleWarframeApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "f:\\nb\\notebooks\\warframe\\consoletest\\ConsoleWarframeApp\\ConsoleWarframeApp.csproj",
+        "projectUniqueName": "E:\\git\\notebooks\\warframe\\consoletest\\ConsoleWarframeApp\\ConsoleWarframeApp.csproj",
         "projectName": "ConsoleWarframeApp",
-        "projectPath": "f:\\nb\\notebooks\\warframe\\consoletest\\ConsoleWarframeApp\\ConsoleWarframeApp.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "f:\\nb\\notebooks\\warframe\\consoletest\\ConsoleWarframeApp\\obj\\",
+        "projectPath": "E:\\git\\notebooks\\warframe\\consoletest\\ConsoleWarframeApp\\ConsoleWarframeApp.csproj",
+        "packagesPath": "E:\\packages\\Nuget\\cache",
+        "outputPath": "E:\\git\\notebooks\\warframe\\consoletest\\ConsoleWarframeApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Tommy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
