@@ -1,1 +1,4 @@
-\warframe\consoletest\ConsoleWarframeApp\bin
+/warframe/consoletest/ConsoleWarframeApp/obj
+/warframe/consoletest/ConsoleWarframeApp/bin
+/warframe/consoletest/.idea
+/warframe/consoletest/.vs
