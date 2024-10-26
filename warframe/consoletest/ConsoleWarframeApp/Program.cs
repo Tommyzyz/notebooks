@@ -2,6 +2,25 @@
 
 
 
+await TestAsync<ArchonHunt>(ArchonHunt.clientString);
+ await TestAsync<List<Alerts>>(Alerts.clientString);
+ await TestAsync<List<News>>(News.clientString);
+ await TestAsync<CetusCycle>(CetusCycle.clientString);
+
+ await TestAsync<List<DailyDeals>>(DailyDeals.clientString);
+ await TestAsync<Nightwave>(Nightwave.clientString);
+
+
+
+ Console.ReadKey();
+Console.WriteLine("Hello, World!");
+return;
+
+ 
+ 
+ 
+ 
+ 
 static async Task TestAsync<T>(string clientString)
 {
     try
@@ -15,7 +34,7 @@ static async Task TestAsync<T>(string clientString)
         var result = JsonSerializer.Deserialize<T>(json);
 
         Console.WriteLine(result?.ToString());
-        Console.ReadKey();
+
     }
     catch (Exception e)
     
@@ -25,16 +44,3 @@ static async Task TestAsync<T>(string clientString)
     }
 
 }
-
-await TestAsync<ArchonHunt>(ArchonHunt.clientString);
-await TestAsync<List<Alerts>>(Alerts.clientString);
-await TestAsync<List<News>>(News.clientString);
-await TestAsync<CetusCycle>(CetusCycle.clientString);
-
-await TestAsync<List<DailyDeals>>(DailyDeals.clientString);
-await TestAsync<Nightwave>(Nightwave.clientString);
-
-
-
-
-Console.WriteLine("Hello, World!");
