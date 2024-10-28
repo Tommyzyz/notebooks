@@ -3,7 +3,7 @@ using System;
 namespace ConsoleWarframeApp.Model;
 
 // arbitration: 仲裁
-public class Arbitration
+public class arbitration
 {
         public DateTime activation { get; set; }
         public DateTime expiry { get; set; }

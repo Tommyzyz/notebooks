@@ -1,45 +1,49 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
-static async Task TestAsync<T>(string queryName)
+
+ await TestAsync<archonHunt>();
+  await TestAsync<List<alerts>>();
+  await TestAsync<List<news>>();
+  await TestAsync<cetusCycle>();
+
+  await TestAsync<List<dailyDeals>>();
+ var rs =  await TestAsync<nightwave>();
+
+
+Console.WriteLine(rs);
+return;
+
+
+ 
+static async Task<T> TestAsync<T>()
 {
-
-
-    HttpClient httpClient = new();
-    string requeststring = $"https://api.warframestat.us/pc/zh/{queryName}/";
     try
     {
-        //Send the GET request
+        HttpClient httpClient = new();
+        var requeststring = $"https://api.warframestat.us/pc/zh/{GetGengricType<T>()}/";
+
         var response = await httpClient.GetAsync(requeststring);
-        response.EnsureSuccessStatusCode();
-
+        //response.EnsureSuccessStatusCode();
         var json = await response.Content.ReadAsStringAsync();
-        var result = System.Text.Json.JsonSerializer.Deserialize<T>(json);
-
-        System.Console.WriteLine(result?.ToString());
+        var result = JsonSerializer.Deserialize<T>(json);
+        Console.WriteLine(result?.ToString());
+        return result;
     }
     catch (Exception ex)
     {
         System.Console.WriteLine("Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message);
+        throw;
     }
-
-
-
-
-
-
 }
 
 
-
-//await TestAsync<ArchonHunt>("archonHunt");
-//await TestAsync<List<Alerts>>("alerts");
-//await TestAsync<List<News>>("news");
-//await TestAsync<CetusCycle>("cetusCycle");
-await TestAsync<List<DailyDeals>>(DailyDeals.clientString);
-//await TestAsync<Nightwave>(Nightwave.clientString);
-
-
-
-
-Console.WriteLine("Hello, World!");
+static string GetGengricType<T>()
+{
+    Type type = typeof(T);
+    if (type.IsGenericType)
+    {
+        type = type.GetGenericArguments()[0];
+    }
+    return type.Name;
+}
