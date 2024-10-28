@@ -20,11 +20,20 @@ static async Task<T> TestAsync<T>()
 {
     try
     {
-        HttpClient httpClient = new();
+        var socketsHttpHandler = new SocketsHttpHandler()
+        {
+           //建立TCP连接时的超时时间,默认不限制
+           ConnectTimeout = Timeout.InfiniteTimeSpan,
+           //等待服务返回statusCode=100的超时时间,默认1秒
+           Expect100ContinueTimeout = TimeSpan.FromSeconds(100),
+        };
+
+
+        HttpClient httpClient = new(socketsHttpHandler);
         var requeststring = $"https://api.warframestat.us/pc/zh/{GetGengricType<T>()}/";
 
         var response = await httpClient.GetAsync(requeststring);
-        //response.EnsureSuccessStatusCode();
+        response.EnsureSuccessStatusCode();
         var json = await response.Content.ReadAsStringAsync();
         var result = JsonSerializer.Deserialize<T>(json);
         Console.WriteLine(result?.ToString());
@@ -33,7 +42,7 @@ static async Task<T> TestAsync<T>()
     catch (Exception ex)
     {
         System.Console.WriteLine("Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message);
-        throw;
+        return default;//throw;
     }
 }
 
