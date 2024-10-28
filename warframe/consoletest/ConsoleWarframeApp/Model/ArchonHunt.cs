@@ -16,6 +16,8 @@ public class archonHunt
         public required List<Mission> missions { get; set; }
         public required string boss { get; set; }
         public required string faction { get; set; }
+
+        public string? factionKey { get; set; }
         public bool expired { get; set; }
         public required string eta { get; set; }
 }
