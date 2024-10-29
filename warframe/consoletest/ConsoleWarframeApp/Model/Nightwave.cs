@@ -4,8 +4,6 @@ namespace ConsoleWarframeApp.Model;
 
 public class nightwave
 {
-    public const string clientString = "nightwave";
-
 
     public required string id { get; set; }
     public DateTime activation { get; set; }

@@ -4,7 +4,6 @@ namespace ConsoleWarframeApp.Model;
 
 public class dailyDeals
 {
-    public const string clientString = "dailyDeals";
     public required string item { get; set; }
     public required string uniqueName { get; set; }
     public DateTime expiry { get; set; }

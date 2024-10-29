@@ -18,6 +18,7 @@ return;
  
 static async Task<T> TestAsync<T>()
 {
+    string language = "en";
     try
     {
         var socketsHttpHandler = new SocketsHttpHandler()
@@ -30,7 +31,7 @@ static async Task<T> TestAsync<T>()
 
 
         HttpClient httpClient = new(socketsHttpHandler);
-        var requeststring = $"https://api.warframestat.us/pc/zh/{GetGengricType<T>()}/";
+        var requeststring = $"https://api.warframestat.us/pc/{language}/{GetGengricType<T>()}/";
 
         var response = await httpClient.GetAsync(requeststring);
         response.EnsureSuccessStatusCode();
