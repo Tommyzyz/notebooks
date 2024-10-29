@@ -1,0 +1,22 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!csharp
+
+public class Person
+{
+    private string name;
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+}
+
+#!csharp
+
+var p = new Person();
+p.Name = "Tom";
+Console.WriteLine(p.Name); // Output: Tom
