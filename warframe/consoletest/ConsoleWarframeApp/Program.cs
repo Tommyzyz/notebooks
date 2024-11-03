@@ -18,7 +18,7 @@ return;
  
 static async Task<T> TestAsync<T>()
 {
-    string language = "en";
+    string language = "zh";
     try
     {
         var socketsHttpHandler = new SocketsHttpHandler()
