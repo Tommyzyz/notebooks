@@ -1,14 +1,22 @@
 #include <stdio.h>
+
 int result = 0;
-int main() {
-    for (int i = 0; i < 10; i++)
+void pr() 
+{
+    printf("Hello, world!\n");
+}
+
+
+int main() 
+{
+    for (int i = 0; i < 5; i++)
     {
         printf("%d\n", i);
+        pr();
     }
     scanf("%d", &result);
     
-    printf("Hello, world!1\n");
-    printf("%d\n", result);
-    printf("Hello, world!2\n");
+    printf("RESULT: %d\n", result);
+
     return 0;
 }
