@@ -8,7 +8,7 @@ int main() {
     scanf("%d", &result);
     
     printf("Hello, world!1\n");
-    printf("111111111111\n");
+    printf("%d\n", result);
     printf("Hello, world!2\n");
     return 0;
 }
