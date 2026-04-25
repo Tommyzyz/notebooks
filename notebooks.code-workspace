@@ -4,7 +4,4 @@
 			"path": "."
 		}
 	],
-	"settings": {
-		"dotnet.defaultSolution": "MiShiDao.sln"
-	}
 }

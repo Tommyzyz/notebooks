@@ -1,0 +1,11 @@
+docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiNDk0ZWYyOTBmMWQzYWY2ZWFlZGUyZDIxMzNlZjUyNWYiLCJ0IjoiOGYzZWI5NDItYjg3YS00M2YwLWI1ZGItYzUxZDQ1YTA0ZjNkIiwicyI6IlptSmpOVGN6TXpBdFpUUm1NeTAwTm1ZM0xXRmlPV1V0WWpjeE5EZGhNall6TldNdyJ9
+
+version: '3.9'
+
+services:
+  cloudflared:
+    image: cloudflare/cloudflared
+    container_name: cloudflared  #这里自定义容器名         
+    restart: always
+    network_mode: host
+    command: tunnel --no-autoupdate run --token eyJhIjoiNDk0ZWYyOTBmMWQzYWY2ZWFlZGUyZDIxMzNlZjUyNWYiLCJ0IjoiOGYzZWI5NDItYjg3YS00M2YwLWI1ZGItYzUxZDQ1YTA0ZjNkIiwicyI6IlptSmpOVGN6TXpBdFpUUm1NeTAwTm1ZM0xXRmlPV1V0WWpjeE5EZGhNall6TldNdyJ9
